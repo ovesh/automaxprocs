@@ -1,6 +1,6 @@
 package cpuquota
 
-import "go.uber.org/automaxprocs/internal/cgroups"
+import "github.com/ovesh/automaxprocs/internal/cgroups"
 
 // NewCGroupsForCurrentProcess returns a new *CGroups instance for the current
 // process.

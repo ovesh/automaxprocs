@@ -24,8 +24,9 @@ package automaxprocs_test
 import (
 	"fmt"
 
+	"github.com/ovesh/automaxprocs/internal/cgroups"
+
 	_ "go.uber.org/automaxprocs"
-	"go.uber.org/automaxprocs/internal/cgroups"
 )
 
 // To render a whole-file example, we need a package-level declaration.
