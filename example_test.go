@@ -24,7 +24,7 @@ package automaxprocs_test
 import (
 	"fmt"
 
-	"github.com/ovesh/automaxprocs/internal/cgroups"
+	"github.com/ovesh/automaxprocs/cpuquota"
 
 	_ "go.uber.org/automaxprocs"
 )
@@ -35,7 +35,7 @@ var _ = ""
 func Example() {}
 
 func getCurrentCPUAllocation() error {
-	allCGroups, err := cgroups.NewCGroupsForCurrentProcess()
+	allCGroups, err := cpuquota.NewCGroupsForCurrentProcess()
 	if err != nil {
 		return err
 	}

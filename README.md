@@ -20,7 +20,9 @@ func main() {
 
 To get the current CPU quota
 ```go
-allCGroups, err := cgroups.NewCGroupsForCurrentProcess()
+import "github.com/ovesh/automaxprocs/cpuquota"
+
+allCGroups, err := cpuquota.NewCGroupsForCurrentProcess()
 if err != nil {
 	// handle err
 }
