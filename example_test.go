@@ -21,9 +21,29 @@
 package automaxprocs_test
 
 // Importing automaxprocs automatically adjusts GOMAXPROCS.
-import _ "go.uber.org/automaxprocs"
+import (
+	"fmt"
+
+	_ "go.uber.org/automaxprocs"
+	"go.uber.org/automaxprocs/internal/cgroups"
+)
 
 // To render a whole-file example, we need a package-level declaration.
 var _ = ""
 
 func Example() {}
+
+func getCurrentCPUAllocation() error {
+	allCGroups, err := cgroups.NewCGroupsForCurrentProcess()
+	if err != nil {
+		return err
+	}
+	fmt.Printf("all allCGroups: %+v\n", allCGroups)
+	quota, defined, err := allCGroups.CPUQuota()
+	if !defined || err != nil {
+		return err
+	}
+
+	fmt.Println("quota:", quota)
+	return nil
+}
