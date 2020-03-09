@@ -1,4 +1,4 @@
-module go.uber.org/automaxprocs
+module github.com/ovesh/automaxprocs
 
 go 1.13
 
